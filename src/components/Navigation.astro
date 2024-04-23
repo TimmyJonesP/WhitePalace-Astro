@@ -1,0 +1,91 @@
+---
+
+---
+
+<nav class="nav sticky bg-white inset-0">
+  <div class="p-6 flex justify-between items-center">
+    <h1 class="text-2xl font-semibold">
+      <a href="/">White Palace</a>
+    </h1>
+    <button id="menu-button" class="bg-none border-none ml-auto">
+      <img class="block" src="/menu.svg" alt="Menu Button" />
+    </button>
+    <button id="close-button" class="bg-none border-none ml-auto hidden">
+      <img src="/close.svg" alt="Close Button" />
+    </button>
+  </div>
+
+  <div
+    id="menu-open"
+    class="blurtext contain-content bg-[white]/80 justify-between items-left flex-col fixed inset-0 p-3 mt-14 hidden overflow-y-auto max-h-[38vh]"
+  >
+    <ul class="flex justify-between items-left flex-col">
+      <li class="my-3 font-medium">
+        <a href="https://www.tiktok.com/@whitepalaceok" target="_blank">
+          <img class="inline px-3" src="/tiktok.svg" alt="Tik Tok Logo" />
+          Tik Tok</a
+        >
+      </li>
+      <li class="my-3 font-medium">
+        <a href="https://www.instagram.com/whitepalaceok/" target="_blank">
+          <img class="inline px-3" src="/instagram.svg" alt="Instagram Logo" />
+          Instagram</a
+        >
+      </li>
+      <li class="my-3 font-medium">
+        <a href="https://www.youtube.com/@whitepalaceofficial" target="_blank">
+          <img class="inline px-3" src="/youtube.svg" alt="Youtube Logo" />
+          Youtube</a
+        >
+      </li>
+      <li class="my-3 font-medium">
+        <a
+          href="https://open.spotify.com/intl-es/artist/1HXeMcQJ7RZsIGtqVGe0fZ?si=LYsOycQQR16KdrSK7xYFJA"
+          target="_blank"
+        >
+          <img class="inline px-3" src="/spotify.svg" alt="Spotify Logo" />
+          Spotify</a
+        >
+      </li>
+      <li class="my-3 font-medium">
+        <a
+          href="https://music.apple.com/us/artist/white-palace/1601124568"
+          target="_blank"
+        >
+          <img
+            class="inline px-3"
+            src="/applemusic.svg"
+            alt="Apple Music Logo"
+          />Apple Music</a
+        >
+      </li>
+      <li class="my-3 font-medium">
+        <a href="https://tidal.com/browse/artist/29845962" target="_blank">
+          <img class="inline px-3" src="/tidal.svg" alt="Tidal Logo" />Tidal</a
+        >
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<script>
+  const menuButton = document.querySelector(
+    "#menu-button"
+  ) as HTMLButtonElement;
+  const closeButton = document.querySelector(
+    "#close-button"
+  ) as HTMLButtonElement;
+  const menuOpen = document.querySelector("#menu-open") as HTMLElement;
+
+  menuButton.addEventListener("click", () => {
+    menuOpen.classList.toggle("hidden");
+    menuButton.classList.add("hidden");
+    closeButton.classList.remove("hidden");
+  });
+
+  closeButton.addEventListener("click", () => {
+    menuOpen.classList.add("hidden");
+    closeButton.classList.add("hidden");
+    menuButton.classList.remove("hidden");
+  });
+</script>
