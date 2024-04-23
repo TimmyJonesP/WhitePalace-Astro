@@ -1,8 +1,10 @@
 ---
+import Navigation from "../components/Navigation.astro";
+import { socials } from "../lib/socials";
+
 interface Props {
   title: string;
 }
-
 const { title } = Astro.props;
 ---
 
@@ -16,7 +18,54 @@ const { title } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
+
   <body>
-    <slot />
+    <nav class="nav sticky bg-white inset-0">
+      <div class="p-6 flex justify-between items-center">
+        <h1 class="text-2xl font-semibold">
+          <a href="/">White Palace</a>
+        </h1>
+        <button id="menu-button" class="bg-none border-none ml-auto">
+          <img class="block" src="/menu.svg" alt="Menu Button" />
+        </button>
+        <button id="close-button" class="bg-none border-none ml-auto hidden">
+          <img src="/close.svg" alt="Close Button" />
+        </button>
+      </div>
+
+      <div
+        id="menu-open"
+        class="blurtext contain-content bg-[white]/80 justify-between items-left flex-col fixed inset-0 p-3 mt-14 hidden overflow-y-auto max-h-[38vh]"
+      >
+        <ul class="flex justify-between items-left flex-col">
+          {socials.map((social) => <Navigation redes={social} />)}
+        </ul>
+      </div>
+    </nav>
+    <main>
+      <slot />
+    </main>
   </body>
 </html>
+
+<script>
+  const menuButton = document.querySelector(
+    "#menu-button"
+  ) as HTMLButtonElement;
+  const closeButton = document.querySelector(
+    "#close-button"
+  ) as HTMLButtonElement;
+  const menuOpen = document.querySelector("#menu-open") as HTMLElement;
+
+  menuButton.addEventListener("click", () => {
+    menuOpen.classList.toggle("hidden");
+    menuButton.classList.add("hidden");
+    closeButton.classList.remove("hidden");
+  });
+
+  closeButton.addEventListener("click", () => {
+    menuOpen.classList.add("hidden");
+    closeButton.classList.add("hidden");
+    menuButton.classList.remove("hidden");
+  });
+</script>
