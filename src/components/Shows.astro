@@ -15,9 +15,7 @@ const { place, date, image, tickets } = show;
     style=`background-image: url(${image});`
   >
     <div class="flex-grow"></div>
-    <div
-      class="h-16 w-48 bottom-0 bg-[white]/30 backdrop-blur rounded-ss-sm flex flex-col"
-    >
+    <div class="h-16 w-48 bottom-0 bg-[white]/30 backdrop-blur flex flex-col">
       <h3 class="text-left mt-3 ml-3 text-sm">{place}</h3>
       <h4 class="text-left ml-3 mb-5 text-xs text-gray-900 m-auto">{date}</h4>
       <a class="absolute bottom-3" href={tickets}>

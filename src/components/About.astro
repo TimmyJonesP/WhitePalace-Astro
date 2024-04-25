@@ -1,8 +1,41 @@
 ---
-
+const boxStyle =
+  "bg-neutral-100 rounded flex flex-col items-center justify-center bg-cover bg-center bg-no-repeat";
 ---
 
 <article class="mt-5 mx-3">
   <h2 class="ml-3 text-xl font-semibold">Sobre Nosotros</h2>
-  <div class="gap-3 grid-cols-2 grid-rows-2"></div>
+  <div class="flex max-w-7xl h-[80vw] mx-3 my-5">
+    <div class="grid w-screen gap-3 grid-cols-2 grid-rows-6">
+      <div
+        style=`background-image: url(./images/au-3.webp);`
+        class=`${boxStyle}  row-span-2`
+      >
+      </div>
+      <div
+        class=`${boxStyle} row-span-2`
+        style=`background-image: url(./images/au-2.webp);`
+      >
+      </div>
+      <div
+        class=`${boxStyle} image col-span-2 row-span-4`
+        style=`background-image: url(./images/au-1.webp);`
+      >
+        <div class="flex-grow"></div>
+        <div
+          class="h-15vw w-full bottom-0 bg-[black]/30 backdrop-blur-md flex flex-col"
+        >
+          <h3 class="text-white text-left mt-3 ml-3 text-sm font-semibold">
+            White Palace
+          </h3>
+          <h4 class="text-slate-50 text-left ml-3 mb-2 text-xs m-auto">
+            Banda de rock que comenzó en argentina con base en la ciudad de
+            Buenos Aires. La banda está compuesta por el cantante principal y
+            guitarrista Enzo Ferrari, el bajista Sandro Cariolli, el guitarrista
+            Augusto Cantu y el baterista Gaston Rosello.
+          </h4>
+        </div>
+      </div>
+    </div>
+  </div>
 </article>

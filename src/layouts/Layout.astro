@@ -35,9 +35,9 @@ const { title } = Astro.props;
 
       <div
         id="menu-open"
-        class="blurtext contain-content bg-[white]/80 justify-between items-left flex-col fixed inset-0 p-3 mt-14 hidden overflow-y-auto max-h-[38vh]"
+        class="blurtext contain-content bg-[white]/80 justify-between items-left flex-col fixed inset-0 p-3 mt-14 hidden overflow-y-auto h-fit"
       >
-        <ul class="flex justify-between items-left flex-col">
+        <ul class="flex pt-3 justify-between items-left flex-col">
           {socials.map((social) => <Navigation redes={social} />)}
         </ul>
       </div>
