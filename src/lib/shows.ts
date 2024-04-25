@@ -15,4 +15,11 @@ export const shows: Shows[] = [
     tickets:
       "https://www.passline.com/eventos/white-palace-live-at-makena-club-274",
   },
+  {
+    id: "1",
+    place: "Próximo",
+    date: "No date",
+    image: "/images/c-1.webp",
+    tickets: "",
+  },
 ];
