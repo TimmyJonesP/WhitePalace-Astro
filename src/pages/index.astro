@@ -6,6 +6,7 @@ import Shows from "../components/Shows.astro";
 import { shows } from "../lib/shows";
 import { socials } from "../lib/socials";
 import About from "../components/About.astro";
+import Contact from "../components/Contact.astro";
 ---
 
 <Layout title="White Palace">
@@ -25,4 +26,12 @@ import About from "../components/About.astro";
     {shows.map((show) => <Shows show={show} />)}
   </article>
   <About />
+  <article class="my-5 mx-6">
+    <h2 class="text-xl font-semibold">Contactate!</h2>
+    <h3 class="text-gray-950 text-left mt-3 italic text-sm font-semibold">
+      Si querés ponerte en contacto con nosotros, podes escribirnos en las
+      siguientes plataformas!
+    </h3>
+    <Contact />
+  </article>
 </Layout>
