@@ -5,14 +5,18 @@ interface Props {
   redes: Socials;
 }
 const { redes } = Astro.props;
-const { name, link, alt, image, type } = redes;
+const { name, link, alt, image, color } = redes;
 ---
 
-<div class="mx-3 gap-2 flex flex-col">
-  <a href={link} target="_blank"
-    ><div class="flex items-center h-12 w-vh90 rounded bg-gray-200">
-      <img src={image} class="h-8 w-8 justify-center ml-2" alt={alt} />
-      <p class="text-black mx-3 font-medium">{name}</p>
-    </div>
-  </a>
-</div>
+<a
+  href={link}
+  target="_blank"
+  class=`flex items-center h-12 w-vh40 rounded-lg bg-gray-300 md:min-h-[20vh] md:w-full md:justify-center`
+>
+  <img
+    src={image}
+    class="h-8 w-8 justify-center ml-2 md:items-center md:h-[15vh] md:w-[15vh] md:ml-0"
+    alt={alt}
+  />
+  <p class="text-black mx-3 font-medium md:hidden">{name}</p>
+</a>

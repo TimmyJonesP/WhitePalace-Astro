@@ -4,6 +4,7 @@ export interface Socials {
   alt: string;
   image: string;
   type?: string;
+  color?: string;
 }
 
 export const socials: Socials[] = [
@@ -25,6 +26,7 @@ export const socials: Socials[] = [
     alt: "Youtube logo",
     image: "/youtube.svg",
     type: "music",
+    color: "bg-red-400",
   },
   {
     name: "Spotify",
@@ -32,6 +34,7 @@ export const socials: Socials[] = [
     alt: "Spotify logo",
     image: "/spotify.svg",
     type: "music",
+    color: "bg-green-400",
   },
   {
     name: "Apple Music",
@@ -39,6 +42,7 @@ export const socials: Socials[] = [
     alt: "Apple Music logo",
     image: "/applemusic.svg",
     type: "music",
+    color: "bg-gray-300",
   },
   {
     name: "Tidal",
@@ -46,5 +50,6 @@ export const socials: Socials[] = [
     alt: "Tidal logo",
     image: "/tidal.svg",
     type: "music",
+    color: "bg-gray-300",
   },
 ];

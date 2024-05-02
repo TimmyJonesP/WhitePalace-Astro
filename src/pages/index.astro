@@ -12,8 +12,11 @@ import Contact from "../components/Contact.astro";
 <Layout title="White Palace">
   <Carrousell />
   <article>
-    <h2 class="text-xl mx-6 my-5 font-semibold">Música</h2>
-    <div class="mx-3 gap-2 flex flex-col">
+    <h2 class="text-xl mx-6 mt-5 font-semibold">Música</h2>
+    <p class="text-lg mx-6 mb-5 hidden md:block">Escuchá nuestras canciones!</p>
+    <div
+      class="mx-3 gap-2 flex flex-col md:grid md:grid-cols-2 md:grid-rows-2 md:place-items-center md:mx-52 md:gap-5 lg:flex lg:flex-row lg:mx-10"
+    >
       {
         socials
           .filter((social) => social.type === "music")
@@ -22,8 +25,12 @@ import Contact from "../components/Contact.astro";
     </div>
   </article>
   <article class="my-5 mx-6">
-    <h2 class="text-xl font-semibold">Próximos <br /> Shows</h2>
-    {shows.map((show) => <Shows show={show} />)}
+    <h2 class="text-xl font-semibold">
+      Próximos <br /> Shows
+    </h2>
+    <div class="flex flex-wrap gap-5 justify-evenly mt-6">
+      {shows.map((show) => <Shows show={show} />)}
+    </div>
   </article>
   <About />
   <article class="my-5 mx-6">

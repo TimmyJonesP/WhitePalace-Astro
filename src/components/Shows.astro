@@ -11,19 +11,27 @@ const { place, date, image, tickets } = show;
 <div class="flex gap-5 justify-evenly mt-6">
   <div
     id="card"
-    class="h-48 w-48 rounded bg-cover bg-center bg-no-repeat flex flex-col"
+    class="h-48 w-48 rounded bg-cover bg-center bg-no-repeat flex flex-col md:w-[50vh]"
     style=`background-image: url(${image});`
   >
     <div class="flex-grow"></div>
-    <div class="h-16 w-48 bottom-0 bg-[white]/30 backdrop-blur flex flex-col">
-      <h3 class="text-left mt-3 ml-3 text-sm">{place}</h3>
-      <h4 class="text-left ml-3 mb-5 text-xs text-gray-900 m-auto">{date}</h4>
-      <a class="absolute bottom-3" href={tickets}>
+    <div
+      class="h-16 w-48 bottom-0 bg-[white]/30 backdrop-blur rounded flex flex-col md:w-[50vh] md:h-[7vh]"
+    >
+      <h3 class="text-left mt-3 ml-3 text-sm md:text-xl md:mt-1 md:ml-5">
+        {place}
+      </h3>
+      <h4
+        class="text-left ml-3 mb-5 text-xs md:text-base text-gray-900 m-auto md:mb-10 md:ml-5"
+      >
+        {date}
+      </h4>
+      <a class="absolute bottom-3 md:right-3" href={tickets}>
         <div
-          class="bg-green-600 rounded px-2 py-1 ml-24
-           mr-3 flex justify-center items-center"
+          class="bg-green-600 rounded px-2 py-1 ml-24 md:ml-auto
+           mr-3 flex justify-center items-center md:py-1 md:px-6"
         >
-          <p class="font-semibold text-xs">Get Tickets</p>
+          <p class="font-semibold text-xs md:text-base">Get Tickets</p>
         </div>
       </a>
     </div>
