@@ -9,9 +9,11 @@ const { redes } = Astro.props;
 const { name, link, alt, image } = redes;
 ---
 
-<li class="my-3 font-medium">
+<li class="my-3 font-medium flex flex-row">
   <a href={link} target="_blank">
     <img class="inline px-3" src={image} alt={alt} />
-    {name}</a
-  >
+    <p class="inline md:hidden">
+      {name}
+    </p>
+  </a>
 </li>

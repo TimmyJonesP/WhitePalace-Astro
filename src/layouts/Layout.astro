@@ -20,12 +20,17 @@ const { title } = Astro.props;
   </head>
 
   <body>
-    <nav class="nav sticky bg-white inset-0">
-      <div class="p-6 flex justify-between items-center">
-        <h1 class="text-2xl font-semibold">
+    <nav class="nav sticky bg-white inset-0 z-10">
+      <div class="p-6 flex justify-between items-center md:justify-between">
+        <h1 class="text-2xl font-semibold md:text-4xl">
           <a href="/">White Palace</a>
         </h1>
-        <button id="menu-button" class="bg-none border-none ml-auto">
+        <div class="hidden md:block">
+          <ul class="flex flex-row">
+            {socials.map((social) => <Navigation redes={social} />)}
+          </ul>
+        </div>
+        <button id="menu-button" class="bg-none border-none ml-auto md:hidden">
           <img class="block" src="/menu.svg" alt="Menu Button" />
         </button>
         <button id="close-button" class="bg-none border-none ml-auto hidden">

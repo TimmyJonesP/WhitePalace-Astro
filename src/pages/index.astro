@@ -11,9 +11,13 @@ import Contact from "../components/Contact.astro";
 
 <Layout title="White Palace">
   <Carrousell />
-  <article>
-    <h2 class="text-xl mx-6 mt-5 font-semibold">Música</h2>
-    <p class="text-lg mx-6 mb-5 hidden md:block">Escuchá nuestras canciones!</p>
+  <article class="lg:hidden">
+    <h2 class="text-xl mx-6 mt-5 mb-5 font-semibold md:mb-0 md:text-3xl">
+      Música
+    </h2>
+    <p class="text-lg mx-6 mb-5 hidden md:block md:text-lg">
+      Escuchá nuestras canciones!
+    </p>
     <div
       class="mx-3 gap-2 flex flex-col md:grid md:grid-cols-2 md:grid-rows-2 md:place-items-center md:mx-52 md:gap-5 lg:flex lg:flex-row lg:mx-10"
     >
@@ -25,17 +29,17 @@ import Contact from "../components/Contact.astro";
     </div>
   </article>
   <article class="my-5 mx-6">
-    <h2 class="text-xl font-semibold">
+    <h2 class="text-xl font-semibold md:text-3xl">
       Próximos <br /> Shows
     </h2>
-    <div class="flex flex-wrap gap-5 justify-evenly mt-6">
+    <div class="flex flex-wrap gap-5 justify-evenly">
       {shows.map((show) => <Shows show={show} />)}
     </div>
   </article>
   <About />
   <article class="my-5 mx-6">
-    <h2 class="text-xl font-semibold">Contactate!</h2>
-    <h3 class="text-gray-950 text-left mt-3 italic text-sm font-semibold">
+    <h2 class="text-xl font-semibold md:text-3xl">Contactate!</h2>
+    <h3 class="text-gray-950 text-left italic text-sm font-semibold md:text-xl">
       Si querés ponerte en contacto con nosotros, podes escribirnos en las
       siguientes plataformas!
     </h3>
