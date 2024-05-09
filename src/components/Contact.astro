@@ -2,10 +2,67 @@
 
 ---
 
+<script>
+  import emailjs from "@emailjs/browser";
+  import swal from "sweetalert";
+
+  const form = document.querySelector("form");
+  function handleSubmit(event: Event) {
+    event.preventDefault();
+    const emailInput = document.getElementById("email") as HTMLInputElement;
+    const subjectInput = document.getElementById("subject") as HTMLInputElement;
+    const messageInput = document.getElementById(
+      "message"
+    ) as HTMLTextAreaElement;
+
+    const email = emailInput.value;
+    const subject = subjectInput.value;
+    const message = messageInput.value;
+
+    const templateParams = {
+      subject: subject,
+      from_email: email,
+      message: message,
+    };
+
+    emailjs
+      .send("service_poquqte", "template_5jado4f", templateParams, {
+        publicKey: "ouLIPazYhW6p3X38y",
+      })
+      .then(
+        (response) => {
+          console.log("SUCCESS!", response.status, response.text);
+          swal({
+            title: "Enviado!",
+            text: "Te responderemos lo antes posible!",
+            icon: "success",
+          });
+
+          emailInput.value = "";
+          subjectInput.value = "";
+          messageInput.value = "";
+        },
+        (err) => {
+          console.log("FAILED...", err);
+          swal({
+            title: "Error :(",
+            text: "Veremos de solucionarlo en la brevedad, de todas maneras te invitamos a que nos envíes un mensaje por las redes!",
+            icon: "error",
+          });
+        }
+      );
+  }
+
+  if (form) {
+    form.addEventListener("submit", handleSubmit);
+  }
+</script>
+
 <div class="max-w-7xl mx-auto mt-3">
   <form action="#" method="POST" target="_blank">
     <div class="mt-3">
       <input
+        name="email"
         type="email"
         id="email"
         class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
@@ -15,6 +72,7 @@
     </div>
     <div class="mt-3">
       <input
+        name="subject"
         type="text"
         id="subject"
         class="block p-3 w-full text-sm text-gray-900 bg-gray-600 rounded-lg border border-gray-400 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
@@ -24,6 +82,7 @@
     </div>
     <div class="mt-3 sm:col-span-2">
       <textarea
+        name="mensaje"
         id="message"
         rows="6"
         class="block p-2.5 w-full text-sm text-gray-900 bg-gray-600 rounded-lg shadow-sm border border-gray-400 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
