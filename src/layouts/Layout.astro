@@ -9,10 +9,13 @@ const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
+    <meta
+      name="description"
+      content="White Palace, banda de rock. Página oficial."
+    />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
@@ -22,10 +25,10 @@ const { title } = Astro.props;
   <body>
     <nav class="nav sticky bg-white inset-0 z-10">
       <div class="p-6 flex justify-between items-center md:justify-between">
-        <h1 class="text-2xl font-semibold md:text-4xl">
+        <h1 class="text-2xl font-semibold md:text-4xl lg:ml-64">
           <a href="/">White Palace</a>
         </h1>
-        <div class="hidden md:block">
+        <div class="hidden md:block lg:mr-64">
           <ul class="flex flex-row">
             {socials.map((social) => <Navigation redes={social} />)}
           </ul>
@@ -50,7 +53,22 @@ const { title } = Astro.props;
     <main>
       <slot />
     </main>
-    <footer></footer>
+    <footer class="p-6 bg-black">
+      <div class="flex-col justify-center items-center max-w-7xl mx-auto">
+        <ul class="flex flex-col justify-center items-center text-slate-300">
+          <li>
+            <a href="/">
+              <p class="text-2xl font-semibold text-white">White Palace</p>
+            </a>
+          </li>
+          <li>
+            <a href="https://linktr.ee/WhitePalace">
+              <p class="text-lg font-normal text-white">Linktree</p>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </footer>
   </body>
 </html>
 
